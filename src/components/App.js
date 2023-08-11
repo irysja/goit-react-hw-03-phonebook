@@ -9,8 +9,6 @@ class App extends Component {
   state = {
     contacts: [],
     filter: '',
-    name: '',
-    number: '',
   };
 
   componentDidMount() {
@@ -25,14 +23,6 @@ class App extends Component {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
-
-  handleNameChange = (name) => {
-    this.setState({ name });
-  };
-
-  handleNumberChange = (number) => {
-    this.setState({ number });
-  };
 
   handleFilterChange = (event) => {
     this.setState({ filter: event.target.value });
@@ -63,8 +53,6 @@ class App extends Component {
 
     this.setState((prevState) => ({
       contacts: [...prevState.contacts, newContact],
-      name: '',
-      number: '',
     }));
   };
 
@@ -85,10 +73,6 @@ class App extends Component {
       <div>
         <h1>Phonebook</h1>
         <ContactForm
-          name={name}
-          number={number}
-          handleNameChange={this.handleNameChange}
-          handleNumberChange={this.handleNumberChange}
           handleSubmit={this.handleSubmit}
         />
         <Filter filter={filter} handleFilterChange={this.handleFilterChange} />
