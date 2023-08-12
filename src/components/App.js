@@ -74,6 +74,7 @@ class App extends Component {
         <h1>Phonebook</h1>
         <ContactForm handleSubmit={this.handleSubmit} />
         <Filter filter={filter} handleFilterChange={this.handleFilterChange} />
+        <h2>Contacts</h2>
         <ContactList
           contacts={filteredContacts}
           handleDeleteContact={this.handleDeleteContact}
